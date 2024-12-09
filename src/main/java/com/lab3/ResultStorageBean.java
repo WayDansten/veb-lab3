@@ -2,6 +2,7 @@ package com.lab3;
 
 import jakarta.annotation.ManagedBean;
 import jakarta.enterprise.context.SessionScoped;
+import jakarta.inject.Named;
 import lombok.Getter;
 
 import java.io.Serializable;
@@ -10,10 +11,12 @@ import java.util.ArrayList;
 @Getter
 @ManagedBean
 @SessionScoped
-public class ResultStorage implements Serializable {
-    private final ArrayList<ResultData> tableData = new ArrayList<>();
+@Named("resultStorageBean")
+public class ResultStorageBean implements Serializable {
 
-    public void addTableData(ResultData resultData) {
+    private final ArrayList<ResultDataBean> tableData = new ArrayList<>();
+
+    public void addData(ResultDataBean resultData) {
         tableData.add(resultData);
     }
 

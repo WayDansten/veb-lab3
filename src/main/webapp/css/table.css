@@ -18,3 +18,18 @@ table {
 .buttonTable td, .buttonTable tr {
     border: none;
 }
+
+.table th {
+    border-top: none;
+}
+
+.table td:first-child, .table th:first-child {
+    border-left: none;
+}
+
+.table td:last-child, .table th:last-child {
+    border-right: none;
+}
+.table tr:last-child td {
+    border-bottom: none;
+}

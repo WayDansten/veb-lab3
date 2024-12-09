@@ -15,7 +15,7 @@
         <h:form id="inputForm">
             <p:defaultCommand target="dummy"/>
             <p:commandButton id="dummy" process="@none" global="false" style="display:none;"/>
-            <table class="table" cellpadding="0" cellspacing="0">
+            <table cellpadding="0" cellspacing="0">
                 <tr>
                     <th width="15%">
                         <h1>Введите X</h1>
@@ -36,62 +36,86 @@
                 <tr>
                     <td align="center">
                         <h:panelGrid columns="2" cellpadding="3" cellspacing="0" styleClass="buttonTable">
-                            <p:commandButton value="X = -5" action="#{selectedValuesBean.setSelectedX(-5)}" update="selectedXValue YErrorMessage" styleClass="inputButton" />
-                            <p:commandButton value="X = -4" action="#{selectedValuesBean.setSelectedX(-4)}" update="selectedXValue YErrorMessage" styleClass="inputButton" />
-                            <p:commandButton value="X = -3" action="#{selectedValuesBean.setSelectedX(-3)}" update="selectedXValue YErrorMessage" styleClass="inputButton" />
-                            <p:commandButton value="X = -2" action="#{selectedValuesBean.setSelectedX(-2)}" update="selectedXValue YErrorMessage" styleClass="inputButton" />
-                            <p:commandButton value="X = -1" action="#{selectedValuesBean.setSelectedX(-1)}" update="selectedXValue YErrorMessage" styleClass="inputButton" />
-                            <p:commandButton value="X = 0" action="#{selectedValuesBean.setSelectedX(0)}" update="selectedXValue YErrorMessage" styleClass="inputButton" />
-                            <p:commandButton value="X = 1" action="#{selectedValuesBean.setSelectedX(1)}" update="selectedXValue YErrorMessage" styleClass="inputButton" />
-                            <p:commandButton value="X = 2" action="#{selectedValuesBean.setSelectedX(2)}" update="selectedXValue YErrorMessage" styleClass="inputButton" />
-                            <p:commandButton value="X = 3" action="#{selectedValuesBean.setSelectedX(3)}" update="selectedXValue YErrorMessage" styleClass="inputButton" />
+                            <p:commandButton value="X = -5" action="#{resultDataBean.setSelectedX(-5)}" update="selectedXValue YErrorMessage" styleClass="inputButton" />
+                            <p:commandButton value="X = -4" action="#{resultDataBean.setSelectedX(-4)}" update="selectedXValue YErrorMessage" styleClass="inputButton" />
+                            <p:commandButton value="X = -3" action="#{resultDataBean.setSelectedX(-3)}" update="selectedXValue YErrorMessage" styleClass="inputButton" />
+                            <p:commandButton value="X = -2" action="#{resultDataBean.setSelectedX(-2)}" update="selectedXValue YErrorMessage" styleClass="inputButton" />
+                            <p:commandButton value="X = -1" action="#{resultDataBean.setSelectedX(-1)}" update="selectedXValue YErrorMessage" styleClass="inputButton" />
+                            <p:commandButton value="X = 0" action="#{resultDataBean.setSelectedX(0)}" update="selectedXValue YErrorMessage" styleClass="inputButton" />
+                            <p:commandButton value="X = 1" action="#{resultDataBean.setSelectedX(1)}" update="selectedXValue YErrorMessage" styleClass="inputButton" />
+                            <p:commandButton value="X = 2" action="#{resultDataBean.setSelectedX(2)}" update="selectedXValue YErrorMessage" styleClass="inputButton" />
+                            <p:commandButton value="X = 3" action="#{resultDataBean.setSelectedX(3)}" update="selectedXValue YErrorMessage" styleClass="inputButton" />
                         </h:panelGrid>
                         <label for="selectedXValue">Выбранное значение X: </label>
-                        <h:outputText id="selectedXValue" value="#{selectedValuesBean.selectedX}"/>
+                        <h:outputText id="selectedXValue" value="#{resultDataBean.selectedX}"/>
                     </td>
                     <td>
                         <label for="YTextfield">Введите значение Y (Y принимает значения от -3 до 3):</label>
-                        <h:inputText id="YTextfield" value="#{selectedValuesBean.selectedY}" required="true">
+                        <h:inputText id="YTextfield" value="#{resultDataBean.selectedY}" required="true">
                             <f:validateDoubleRange minimum="-3.0" maximum="3.0" />
                         </h:inputText>
                         <h:message id="YErrorMessage" for="YTextfield" style="color: red" />
                     </td>
                     <td>
                         <h:panelGrid columns="1" cellspacing="0" cellpadding="0" styleClass="buttonTable">
-                            <p:commandLink value="R = 1" action="#{selectedValuesBean.setSelectedR(1)}" update="selectedRValue YErrorMessage"
+                            <p:commandLink value="R = 1" action="#{resultDataBean.setSelectedR(1)}" update="selectedRValue YErrorMessage"
                                            style="color: darkblue; font-family: 'Microsoft Sans Serif', 'serif';" />
-                            <p:commandLink value="R = 1.5" action="#{selectedValuesBean.setSelectedR(1.5)}" update="selectedRValue YErrorMessage" styleClass="inputLink"
+                            <p:commandLink value="R = 1.5" action="#{resultDataBean.setSelectedR(1.5)}" update="selectedRValue YErrorMessage" styleClass="inputLink"
                                            style="color: darkblue; font-family: 'Microsoft Sans Serif', 'serif';" />
-                            <p:commandLink value="R = 2" action="#{selectedValuesBean.setSelectedR(2)}" update="selectedRValue YErrorMessage" styleClass="inputLink"
+                            <p:commandLink value="R = 2" action="#{resultDataBean.setSelectedR(2)}" update="selectedRValue YErrorMessage" styleClass="inputLink"
                                            style="color: darkblue; font-family: 'Microsoft Sans Serif', 'serif';" />
-                            <p:commandLink value="R = 2.5" action="#{selectedValuesBean.setSelectedR(2.5)}" update="selectedRValue YErrorMessage" styleClass="inputLink"
+                            <p:commandLink value="R = 2.5" action="#{resultDataBean.setSelectedR(2.5)}" update="selectedRValue YErrorMessage" styleClass="inputLink"
                                            style="color: darkblue; font-family: 'Microsoft Sans Serif', 'serif';" />
-                            <p:commandLink value="R = 3" action="#{selectedValuesBean.setSelectedR(3)}" update="selectedRValue YErrorMessage" styleClass="inputLink"
+                            <p:commandLink value="R = 3" action="#{resultDataBean.setSelectedR(3)}" update="selectedRValue YErrorMessage" styleClass="inputLink"
                                            style="color: darkblue; font-family: 'Microsoft Sans Serif', 'serif';" />
                         </h:panelGrid>
                         <label for="selectedRValue">Выбранное значение R: </label>
-                        <h:outputText id="selectedRValue" value="#{selectedValuesBean.selectedR}"/>
+                        <h:outputText id="selectedRValue" value="#{resultDataBean.selectedR}"/>
                     </td>
                     <td>
                         <ui:include src="images/image.svg" />
                     </td>
-                    <td>
-
+                    <td style="vertical-align: top;">
+                        <h:dataTable id="resultTable" value="#{resultStorageBean.tableData}" var="result"
+                                     cellspacing="0" cellpadding="0" width="100%" styleClass="table">
+                            <h:column>
+                                <f:facet name="header">X</f:facet>
+                                <h:outputText value="#{result.selectedX}" />
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">Y</f:facet>
+                                <h:outputText value="#{result.selectedY}" />
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">R</f:facet>
+                                <h:outputText value="#{result.selectedR}" />
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">Результат</f:facet>
+                                <h:outputText value="#{result.result}" />
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">Время выполнения</f:facet>
+                                <h:outputText value="#{result.execTime}" />
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">Время начала выполнения</f:facet>
+                                <h:outputText value="#{result.currTime}" />
+                            </h:column>
+                        </h:dataTable>
                     </td>
                 </tr>
                 <tr>
                     <td colspan="3">
-                        <p:commandButton value="Submit" update="YErrorMessage">
-                            <f:ajax />
-                        </p:commandButton>
+                        <p:commandButton value="Submit" update="YErrorMessage resultTable" action="#{dataManagementBean.processForm(resultDataBean)}" />
                     </td>
                     <td colspan="2">
-                        <h:form id="goToStarter">
-                            <h:commandLink action="GoToStarter" value="Вернуться на стартовую страницу" />
-                        </h:form>
+                        <h:commandLink action="GoToStarter" value="Вернуться на стартовую страницу" />
                     </td>
                 </tr>
             </table>
         </h:form>
+        <script type="text/javascript" src="js/script.js">
+        </script>
     </h:body>
 </html>
