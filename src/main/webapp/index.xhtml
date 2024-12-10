@@ -13,8 +13,6 @@
     </h:head>
     <h:body>
         <h:form id="inputForm">
-            <p:defaultCommand target="dummy"/>
-            <p:commandButton id="dummy" process="@none" global="false" style="display:none;"/>
             <table cellpadding="0" cellspacing="0">
                 <tr>
                     <th width="15%">
@@ -80,15 +78,15 @@
                                      cellspacing="0" cellpadding="0" width="100%" styleClass="table">
                             <h:column>
                                 <f:facet name="header">X</f:facet>
-                                <h:outputText value="#{result.selectedX}" />
+                                <h:outputText value="#{result.x}" />
                             </h:column>
                             <h:column>
                                 <f:facet name="header">Y</f:facet>
-                                <h:outputText value="#{result.selectedY}" />
+                                <h:outputText value="#{result.y}" />
                             </h:column>
                             <h:column>
                                 <f:facet name="header">R</f:facet>
-                                <h:outputText value="#{result.selectedR}" />
+                                <h:outputText value="#{result.r}" />
                             </h:column>
                             <h:column>
                                 <f:facet name="header">Результат</f:facet>
@@ -114,6 +112,10 @@
                     </td>
                 </tr>
             </table>
+        <p:defaultCommand target="dummy"/>
+        <p:commandButton id="dummy" process="@none" global="false" style="display:none;"/>
+        <p:remoteCommand name="processClick" actionListener="#{dataManagementBean.processForm(resultDataBean)}" update="resultTable" style="display: none;" />
+        <h:inputHidden id="XSetter" value="#{resultDataBean.selectedX}" />
         </h:form>
         <script type="text/javascript" src="js/script.js">
         </script>

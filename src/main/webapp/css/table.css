@@ -30,6 +30,3 @@ table {
 .table td:last-child, .table th:last-child {
     border-right: none;
 }
-.table tr:last-child td {
-    border-bottom: none;
-}

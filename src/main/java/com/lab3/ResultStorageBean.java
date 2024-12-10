@@ -14,10 +14,10 @@ import java.util.ArrayList;
 @Named("resultStorageBean")
 public class ResultStorageBean implements Serializable {
 
-    private final ArrayList<ResultDataBean> tableData = new ArrayList<>();
+    private final ArrayList<ResultData> tableData = new ArrayList<>();
 
-    public void addData(ResultDataBean resultData) {
-        tableData.add(resultData);
+    public void addData(ResultDataBean data) {
+        tableData.add(new ResultData(data.getSelectedX(), data.getSelectedY(), data.getSelectedR(), data.isResult(), data.getExecTime(), data.getCurrTime()));
     }
 
 }

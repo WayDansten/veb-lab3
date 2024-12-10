@@ -6,6 +6,7 @@
         <title>Стартовая страница</title>
         <link rel="stylesheet" href="css/starter.css" type="text/css" />
         <link rel="stylesheet" href="css/table.css" type="text/css" />
+        <link rel="stylesheet" href="css/clock.css" type="text/css" />
     </h:head>
     <h:body>
         <table cellpadding="0" cellspacing="0" align="center">
@@ -15,7 +16,30 @@
                 </th>
             </tr>
             <tr>
-                <td>Часы</td>
+                <td>
+                    <div class="clock">
+                        <div class="clock-face">
+                            <div class="number number1">1</div>
+                            <div class="number number2">2</div>
+                            <div class="number number3">3</div>
+                            <div class="number number4">4</div>
+                            <div class="number number5">5</div>
+                            <div class="number number6">6</div>
+                            <div class="number number7">7</div>
+                            <div class="number number8">8</div>
+                            <div class="number number9">9</div>
+                            <div class="number number10">10</div>
+                            <div class="number number11">11</div>
+                            <div class="number number12">12</div>
+                            <div class="hand hour-hand">
+                            </div>
+                            <div class="hand minute-hand">
+                            </div>
+                            <div class="hand second-hand">
+                            </div>
+                        </div>
+                    </div>
+                </td>
             </tr>
             <tr>
                 <td>
@@ -25,5 +49,7 @@
                 </td>
             </tr>
         </table>
+        <script src="js/clock.js" type="text/javascript">
+        </script>
     </h:body>
 </html>
