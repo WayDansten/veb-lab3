@@ -1,15 +1,22 @@
 html {
-    background-color: mediumseagreen;
+    background-color: lightskyblue;
+}
+
+h1, span, label, a {
+    font-family: "Play", serif;
+}
+
+span, label {
+    font-size: 14px;
+    font-weight: 400;
 }
 
 h1 {
     font-size: 18px;
-    font-family: "Handjet", sans-serif;
     font-weight: 700;
 }
 
 a {
-    font-family: "Microsoft Sans Serif", serif;
     font-size: 14px;
     font-style: italic;
     color: darkblue;

@@ -3,6 +3,10 @@ package com.lab3;
 import jakarta.enterprise.context.RequestScoped;
 import jakarta.inject.Inject;
 import jakarta.inject.Named;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -24,7 +28,18 @@ public class DataManagementBean {
         data.setCurrTime(currTime);
 
         resultStorageBean.addData(data);
+        addToDB(data);
 
+    }
+
+    private void addToDB(ResultDataBean data) {
+        try (SessionFactory sessionFactory = new Configuration().configure().addAnnotatedClass(com.lab3.ResultDataBean.class).buildSessionFactory()) {
+            try (Session session = sessionFactory.openSession()) {
+                Transaction transaction = session.beginTransaction();
+                session.saveOrUpdate(data);
+                transaction.commit();
+            }
+        }
     }
 
 }

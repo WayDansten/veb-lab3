@@ -3,6 +3,7 @@ td, th {
     text-align: center;
     font-family: "Microsoft Sans Serif", serif;
     font-size: 14px;
+    background-color: lightblue;
 }
 
 table {
@@ -17,16 +18,4 @@ table {
 
 .buttonTable td, .buttonTable tr {
     border: none;
-}
-
-.table th {
-    border-top: none;
-}
-
-.table td:first-child, .table th:first-child {
-    border-left: none;
-}
-
-.table td:last-child, .table th:last-child {
-    border-right: none;
 }
