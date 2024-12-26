@@ -19,7 +19,8 @@ import java.io.Serializable;
 public class ResultDataBean implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "resultdata_seq")
+    @SequenceGenerator(name = "resultdata_seq", sequenceName = "resultdata_seq", allocationSize = 1)
     private long id;
 
     @Column(name="x", nullable = false)

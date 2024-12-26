@@ -71,7 +71,7 @@
                         <ui:include src="images/image.svg" />
                         <ui:repeat value="#{resultStorageBean.tableData}" var="dataRow">
                             <c:choose>
-                                <c:when test="#{dataRow.result == true}">
+                                <c:when test="#{dataRow.result}">
                                     <svg viewBox="0 0 400 400" style="position: absolute; top: 100; left: 0;" onclick="onClick(event.clientX, event.clientY)">
                                         <circle cx="#{dataRow.x * 100 / resultDataBean.selectedR + 200}"
                                                 cy="#{200 - (dataRow.y * 100 / resultDataBean.selectedR)}"
